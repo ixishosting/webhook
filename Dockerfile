@@ -16,6 +16,7 @@ RUN         apk add --update -t build-deps curl go git libc-dev gcc libgcc ansib
             apk del --purge build-deps && \
             rm -rf /var/cache/apk/* && \
             rm -rf ${GOPATH}
+RUN         apk add --update -t build-deps curl go git libc-dev gcc libgcc ansible util-linux sqlite bash curl mysql-client jq
 
 EXPOSE      9000
 
