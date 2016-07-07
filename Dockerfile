@@ -15,10 +15,9 @@ RUN         apk add --update -t build-deps curl go git libc-dev gcc libgcc ansib
             rm -rf /var/cache/apk/* && \
             rm -rf ${GOPATH}
 RUN         apk add --update -t build-deps curl go git libc-dev gcc libgcc ansible util-linux sqlite bash curl mysql-client jq
-ADD 	    https://github.com/rancher/rancher-compose/releases/download/v0.7.4/rancher-compose-linux-amd64-v0.7.4.tar.gz /tmp/
-
-RUN 	    tar xzvf rancher-compose-linux-amd64-v0.7.4.tar.gz && \
-    	    mv rancher-compose-v0.7.4/rancher-compose /usr/bin && \
+ADD	    https://github.com/rancher/rancher-compose/releases/download/v0.8.5-rc2/rancher-compose-linux-amd64-v0.8.5-rc2.tar.gz
+RUN 	    tar xzvf rancher-compose-linux-amd64-v0.8.5-rc2.tar.gz && \
+    	    mv rancher-compose-v0.8.5-rc2/rancher-compose /usr/bin && \
     	    rm -Rf /tmp/*
 
 EXPOSE      9000
