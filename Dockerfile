@@ -4,7 +4,7 @@ FROM        alpine
 
 ENV         GOPATH /go
 ENV         SRCPATH ${GOPATH}/src/github.com/adnanh
-ENV         WEBHOOK_VERSION 2.3.8
+ENV         WEBHOOK_VERSION 2.5.0
 
 RUN         apk add --update -t build-deps curl go git libc-dev gcc libgcc ansible util-linux sqlite bash curl mysql-client jq openssh openssl wget git && \
             curl -L -o /tmp/webhook-${WEBHOOK_VERSION}.tar.gz https://github.com/adnanh/webhook/archive/${WEBHOOK_VERSION}.tar.gz && \
