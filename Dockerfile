@@ -14,8 +14,7 @@ RUN         apk add --update -t build-deps curl go git libc-dev gcc libgcc ansib
 RUN 	    cd ~/ && wget --no-check-certificate https://github.com/rancher/rancher-compose/releases/download/v0.8.5-rc2/rancher-compose-linux-amd64-v0.8.5-rc2.tar.gz && tar -xzf rancher-compose-linux-amd64-v0.8.5-rc2.tar.gz && \
     	    mv rancher-compose-v0.8.5-rc2/rancher-compose /usr/bin/ && \
     	    rm -Rf /tmp/*
-RUN         apk del --purge build-deps && \
-            rm -rf /var/cache/apk/* && \
+RUN         rm -rf /var/cache/apk/* && \
             rm -rf ${GOPATH}
 EXPOSE      9000
 
